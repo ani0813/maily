@@ -38,7 +38,7 @@ document.addEventListener("mouseup", function(event) {
         // Create a div element for the emotion
         let message = document.createElement("div");
         message.textContent = emotion;
-        ;
+        
         message.classList.add(emotionClass);
 
         // position on the page
