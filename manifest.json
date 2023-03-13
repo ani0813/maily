@@ -15,5 +15,5 @@
         "js": ["scripts/content.js"],
         "all_frames": true
       }],
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab", "https://api-inference.huggingface.co/models/arpanghoshal/EmoRoBERTa"]
 }

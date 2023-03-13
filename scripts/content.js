@@ -19,20 +19,40 @@ document.addEventListener("mouseup", function(event) {
       if (prev !== null) {
         removePrev()
       }
-      // Create a div element for the message
-      let message = document.createElement("div");
-      message.textContent = "Emotion";
-      message.classList.add(emotionClass);
+      // fetching  EmoRoBERTa API
+      fetch("https://api-inference.huggingface.co/models/arpanghoshal/EmoRoBERTa?head=emotion", {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer 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",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          "inputs": selectedText
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        const emotion = JSON.stringify(data[0][0].label).slice(1, -1);
+        
+        //alert(emotion)
+        // Create a div element for the emotion
+        let message = document.createElement("div");
+        message.textContent = emotion;
+        ;
+        message.classList.add(emotionClass);
 
-      // position on the page
-      message.style.top = event.pageY - 50 + "px";
-      message.style.left = event.pageX + "px";
-      
-      // Add the highlighted text and message to the page
-      document.body.appendChild(message);
+        // position on the page
+        message.style.top = event.pageY - 50 + "px";
+        message.style.left = event.pageX + "px";
 
-      // Updates the prev element
-      prev = message;
+        // Add the highlighted text and message to the page
+        document.body.appendChild(message);
+
+        // Updates the prev element
+        prev = message;
+      })
+      .catch(error => {
+        console.log("Error calling Hugging Face API:", error);
+      });
     }
-
 });
