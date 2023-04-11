@@ -1,7 +1,10 @@
 import pymongo
 
-# Connect to MongoDB
-client = pymongo.MongoClient("mongodb+srv://aniguloyan13:jyU6uKH4KMlYlltW@color-names.zo4ftse.mongodb.net/?retryWrites=true&w=majority")
+
+MONGO_URI =  "mongodb+srv://aniguloyan13:jyU6uKH4KMlYlltW@color-names.zo4ftse.mongodb.net/?retryWrites=true&w=majority"
+
+
+client = pymongo.MongoClient(MONGO_URI)
 
 db = client["Maily"]
 collection = db["color-names"]
