@@ -1,4 +1,5 @@
 const API_URL_COLOR = "https://eu-central-1.aws.data.mongodb-api.com/app/data-brhhi/endpoint/data/v1/action/find";
+const API_URL_FEEDBACK = "https://eu-central-1.aws.data.mongodb-api.com/app/data-brhhi/endpoint/data/v1/action/insertOne";
 const URL_FOR_TOKEN = "https://realm.mongodb.com/api/client/v2.0/app/data-brhhi/auth/providers/api-key/login";
 
 async function getToken() {
@@ -33,4 +34,27 @@ async function getColor(emotion) {
     });
     const data = await response.json();
     return data.documents[0].color
+}
+
+async function insertFeedback(text, emotion, feedback) {
+  const token = await getToken();
+  const response = await fetch(API_URL_FEEDBACK, {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer " + token,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ 
+      "collection":"feedbacks",
+      "database":"Maily",
+      "dataSource":"color-names",
+      "document": {
+        "text": text,
+        "emotion": emotion,
+        "feedback": feedback
+      }
+  })
+  });
+  const data = await response.json();
+  return data
 }
