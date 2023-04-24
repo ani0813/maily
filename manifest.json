@@ -1,5 +1,5 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 3, 
     "name": "Maily",
     "version": "1.0",
     "description": "Maily gives the emotion of the highlighted text",
@@ -12,7 +12,7 @@
     "content_scripts": [{
         "matches": ["<all_urls>"],
         "css": ["scripts/styles.css"],
-        "js": ["scripts/content.js", "scripts/fromMongoDBAPI.js", "scripts/fromHuggingface.js"],
+        "js": ["scripts/content.js", "scripts/fromMongoDBAPI.js", "scripts/fromHuggingfaceAPI.js"],
         "all_frames": true
       }],
     "permissions": ["activeTab", "https://api-inference.huggingface.co/models/arpanghoshal/EmoRoBERTa", "https://eu-central-1.aws.data.mongodb-api.com/app/data-brhhi/endpoint/data/v1/action/findOne"],
