@@ -33,7 +33,7 @@ document.addEventListener("selectionchange", async () => {
         emotion_name = document.getElementById("emotion");
         emotion_name.textContent = emotion + ".";
         // Set the background color of the box to the color corresponding to the emotion
-        document.getElementById("box").style.background = color;
+        document.getElementById("box").style.background = color + "E6";
 
         // Add event listener for "click" event on the "close" button
         let close =  document.getElementById("box_container")        
