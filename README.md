@@ -14,3 +14,6 @@ You can generate yours and put after "Bearer" by doing the following steps
 - click on "New token"
 - give your token a name and select the scope you need (read)
 - click on "Create" to generate the token
+
+- Start using it!
+Here you can find the demo video https://www.loom.com/share/7e41c917b08f402eb5b4174adc73c00d
