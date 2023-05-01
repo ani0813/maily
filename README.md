@@ -11,7 +11,7 @@ You can generate yours and put after "Bearer" by doing the following steps
 
 - create an account on Hugging Face at https://huggingface.co/join
 - go to the API token page at https://huggingface.co/settings/token
-- click on "New token"
+- click on "New token" and the name "emotion_names"
 - give your token a name and select the scope you need (read)
 - click on "Create" to generate the token
 

@@ -15,7 +15,8 @@
         "js": ["scripts/content.js", "scripts/fromMongoDBAPI.js", "scripts/fromHuggingfaceAPI.js"],
         "all_frames": true
       }],
-    "permissions": ["activeTab", "https://api-inference.huggingface.co/models/arpanghoshal/EmoRoBERTa", "https://eu-central-1.aws.data.mongodb-api.com/app/data-brhhi/endpoint/data/v1/action/findOne"],
+    "host_permissions": ["https://api-inference.huggingface.co/models/arpanghoshal/EmoRoBERTa", "https://eu-central-1.aws.data.mongodb-api.com/app/data-brhhi/endpoint/data/v1/action/findOne"],
+    "permissions": ["activeTab"],
     "action": {
         "default_popup": "popup/popup.html"
     },

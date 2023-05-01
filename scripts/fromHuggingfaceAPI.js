@@ -8,7 +8,7 @@ async function getEmotion(text) {
     const response = await fetch(API_URL_EMOTION, {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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", 
+        "Authorization": "Bearer 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", 
         "Content-Type": "application/json" 
       },
       body: JSON.stringify({ inputs: text }) 
